@@ -40,10 +40,20 @@ function guessNumber(guess) {
         if(_score > _highscore) {
             _highscore = _score;
             document.getElementById("highscore").innerHTML = _highscore;
+            localStorage.setItem('highscore', _highscore);
         }
         _score = 0;
         document.getElementById("score").innerHTML = 0;
     }
 }
 
+function loadStorage() {
+    let saved_score = localStorage.getItem('highscore');
+    if(saved_score !== null) {
+        _highscore = Number(saved_score);
+        document.getElementById("highscore").innerHTML = _highscore;
+    }
+}
+
 generateNewNumber();
+loadStorage();
