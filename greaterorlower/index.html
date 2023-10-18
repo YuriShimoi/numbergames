@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greater or Lower</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <div>
+                <span id="guess-result">...</span>
+                <div id="number-roll">
+                    <span id="number">000</span>
+                </div>
+                <span id="hint">Between 1 and 999</span>
+            </div>
+            <div id="guess-container">
+                <span>The next number is</span>
+                <div id="guess-btns">
+                    <button id="gr-btn" onclick="guessNumber(1)">GREATER</button>
+                    <button id="lw-btn" onclick="guessNumber(0)">LOWER</button>
+                </div>
+            </div>
+            <div id="score-container">
+                <span id="score">0</span>
+                <span id="highscore">0</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

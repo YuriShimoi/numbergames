@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Share Tech Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sharetechmono/v15/J7aHnp1uDWRBEqV98dVQztYldFcLowEF.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2) format('woff2');
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: #eee;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+#hint {
+    color: #888;
+}
+
+#guess-result {
+    color: #333;
+    font-size: 1.6em;
+    font-family: 'Bebas Neue';
+}
+
+#number-roll {
+    border: 3px solid #333;
+    background: white;
+    padding: 0 24px;
+    box-shadow:
+    inset 12px 0 1px 0 #111,
+    inset -12px 0 1px 0 #111,
+    inset 0 0 10px 2px #11111166;
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+#number {
+    display: block;
+    font-size: 4em;
+    font-family: 'Share Tech Mono';
+}
+
+#guess-container {
+    display: grid;
+    font-size: 1.4em;
+}
+
+#guess-container span {
+    display: block;
+}
+
+#guess-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+#guess-btns button {
+    border: 3px solid black;
+    border-radius: 3px;
+    box-shadow: inset 0 6px 0 0 #48004b33, inset 0 -6px 0 0 #48004b33;
+    padding: 4px 20px 2px 20px;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Bebas Neue';
+    text-shadow: 0 3px 0 #48004b55;
+    cursor: pointer;
+}
+#guess-btns button:hover {
+    box-shadow: inset 0 0 0 2px white, inset 0 6px 0 0 #48004b33, inset 0 -6px 0 0 #48004b33;
+}
+
+#gr-btn {
+    background: #07b807;
+}
+
+#lw-btn {
+    background: #f31212;
+}
+
+#score-container {
+    display: grid;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+#score::before {
+    content: "SCORE: ";
+}
+
+#highscore {
+    font-size: 0.7em;
+    color: #888;
+}
+
+#highscore::before {
+    content: "HIGHSCORE: ";
+}
+
+.roll-up {
+    transform: translateY(0deg);
+    animation: rollUp 120ms ease-in-out;
+}
+
+.roll-down {
+    transform: translateY(0deg);
+    animation: rollDown 120ms ease-in-out;
+}
+
+@keyframes rollUp {
+    0% {
+        transform: translateY(0%);
+    }
+    49% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    51% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes rollDown {
+    0% {
+        transform: translateY(0%);
+    }
+    49% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    51% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
