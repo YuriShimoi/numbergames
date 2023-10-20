@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'Chivo Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/chivomono/v9/mFThWbgRxKvF_Z5eQMO9qRMrJJrnKNtC3D6_r5fSIJk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: #eee;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 20px 100px;
+    flex-direction: row;
+}
+
+/* * {
+    box-shadow: inset 0 0 0 1px #ff000022;
+} */
+
+.hint {
+    color: #999;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+#lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#number {
+    display: block;
+    font-size: 4em;
+    font-family: 'Chivo Mono';
+    border-bottom: 3px solid black;
+}
+
+#timer {
+    font-family: 'Chivo Mono';
+    font-weight: 300;
+    color: #999;
+}
+#timer::before {
+    content: "TIMER: ";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+#timer::after {
+    content: " ms";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 0.6em;
+}
+
+#score-container {
+    display: block;
+    color: #999;
+    font-size: 1.5em;
+    font-weight: 500;
+
+    margin-top: 16px;
+}
+
+#score::before {
+    content: "SCORE: ";
+    font-size: 0.8em;
+}
+
+#score-hint {
+    display: inline-block;
+    font-family: 'Chivo Mono';
+    font-size: 0.8rem;
+    font-weight: 300;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 5px;
+    color: #eee;
+    background: #ccc;
+    transform: translateY(-8px);
+    cursor: help;
+}
+#score-hint:hover,
+#score-hint:focus {
+    background: #333;
+}
+#score-hint:hover + #score-hint-box,
+#score-hint:focus + #score-hint-box {
+    display: grid;
+}
+#score-hint-box {
+    display: none;
+    text-align: left;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    padding: 5px;
+    position: fixed;
+    grid-template-columns: 32px 1fr;
+    align-items: end;
+    margin-left: -78px;
+    gap: 0 8px;
+}
+#score-hint-box > span:nth-child(odd) {
+    font-size: 0.9em;
+    display: inline-block;
+    text-align: right;
+}
+#score-hint-box > span:nth-child(even) {
+    color: #333;
+}
+
+#reset-btn {
+    display: block;
+    padding: 6px 25px 4px 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: #333;
+    color: white;
+
+    cursor: pointer;
+    margin-top: 5px;
+}
+#reset-btn[disabled] {
+    background: inherit;
+    border-color: #ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+#highscore {
+    font-weight: 600;
+}
+
+#highscore::before {
+    content: "HIGHSCORE: ";
+    color: #999;
+    font-size: 0.8em;
+}
+
+#highscore #hs-time::before {
+    content: "- ";
+    color: #999;
+}
+
+#place-container {
+    border: 2px solid #aaa;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#places {
+    display: grid;
+    text-align: start;
+    gap: 5px 15px;
+    margin: 0;
+    padding-left: 0;
+    list-style-position: inside;
+    color: #999;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#places > li {
+    text-align: right;
+}
+#places > li:hover {
+    color: black;
+}
+
+#places span {
+    font-weight: 300;
+    color: #333;
+    display: inline-block;
+    background: #ddd;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0 6px 0 0;
+    width: 72px;
+
+    font-family: 'Chivo Mono';
+    transition: background 80ms ease;
+}
+#places span::before {
+    content: attr(ordened-label);
+    margin-right: 5px;
+    color: #999;
+    font-size: 0.85em;
+}
+#places span.right-order::before {
+    color: #03db32;
+}
+#places span:not(.filled):hover {
+    background: inherit;
+    cursor: pointer;
+}
+#places span:not(.filled):hover::after {
+    content: attr(next-value);
+}
+#places span.filled {
+    background: inherit;
+}
+#places span.filled:hover {
+    cursor: not-allowed;
+}
+#places span.filled::after {
+    content: "";
+}
+
+
+
+@media all and (max-width: 1000px)
+{
+    #main {
+        flex-direction: column;
+    }
+}

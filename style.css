@@ -1,0 +1,29 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: white;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main h2 {
+    margin-bottom: 0;
+}
+
+#main ul {
+    margin-left: -40px;
+}

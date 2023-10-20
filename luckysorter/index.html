@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Sorter</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <div>
+                <span id="number">000</span>
+                <span id="timer">0:00.00</span>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span id="score-container">
+                        <span id="score">0</span>
+                        <span id="score-hint">?</span>
+                        <div id="score-hint-box">
+                            <span>+20</span><span> For each correct place</span>
+                            <span>+10</span><span> For each correct sequence</span>
+                            <span>+10</span><span> For each unique first number</span>
+                            <span>+60</span><span> If time is less than 3 minutes</span>
+                            <span>+100</span><span> If time is less than 1 minute</span>
+                            <span>+150</span><span> If time is less than 30 seconds</span>
+                        </div>
+                    </span>
+                    
+                    <button id="reset-btn" onclick="resetAll()">RESET</button>
+                </div>
+            </div>
+            <div id="lateral">
+                <span class="hint">CLICK TO ORDER HERE</span>
+                <div id="place-container">
+                    <ol id="places">
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                    </ol>
+                </div>
+                <span id="highscore">
+                    <span id="hs-score">000</span>
+                    <span id="hs-time">0:00.00</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
