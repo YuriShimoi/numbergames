@@ -24,7 +24,7 @@ function generateNewNumber() {
         let next = 0;
         do {
             next = Math.round((Math.random() * 998) + 1);
-        } while(previous == next && _placelist.includes(formatNum(next)));
+        } while(previous == next || _placelist.includes(formatNum(next)));
 
         numberElement.innerHTML = formatNum(next);
     }
