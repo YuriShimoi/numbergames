@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <div>
+                <span id="number" hidden>00000</span>
+                <div id="input-numbers">
+                    <input type="text" value="">
+                    <input type="text" value="">
+                    <input type="text" value="">
+                    <input type="text" value="">
+                    <input type="text" value="">
+                </div>
+                <button id="guess-btn" onclick="checkGuess()">GUESS</button>
+            </div>
+            <div>
+                <span id="hint-label">Click in the hint to reveal</span>
+                <ol id="hints"></ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
