@@ -107,7 +107,7 @@ html, body {
     max-width: 420px;
     width: calc(100vw - 60px);
     text-align: left;
-    max-height: calc(100vh - 172px);
+    max-height: calc(100vh - 192px);
     overflow-y: auto;
     padding-left: 24px;
 }

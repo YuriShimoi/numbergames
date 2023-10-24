@@ -205,7 +205,7 @@ function getCoupleHint(num) {
             let rp3 = getRandomPos([rp1, rp2]);
             let rn3 = Number(String(num)[rp3]);
             formulaRes = rn1 * rn2 - rn3;
-            hintLabel = `on <b>n${rp1+1} * n${rp2+1} - n${rp3}</b> the result is <b>${formulaRes}</b>`;
+            hintLabel = `on <b>n${rp1+1} * n${rp2+1} - n${rp3+1}</b> the result is <b>${formulaRes}</b>`;
             hintFunc = (n) => {
                 let nstr1 = Number(String(n).split('')[rp1]);
                 let nstr2 = Number(String(n).split('')[rp2]);
