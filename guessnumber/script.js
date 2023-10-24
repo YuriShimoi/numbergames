@@ -417,6 +417,8 @@ function bindNumberValidator() {
 }
 
 function checkGuess() {
+    document.getElementById("guesscount").innerHTML = Number(document.getElementById("guesscount").innerHTML)+1;
+
     let guessInputs = [...document.getElementById("input-numbers").children];
     let guess = guessInputs.reduce((acc, n) => acc + (String(n.value) || '-'), '');
     
