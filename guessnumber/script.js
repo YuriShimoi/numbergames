@@ -120,27 +120,27 @@ function getFormulaHint(num) {
     let formulaRes = 0;
     switch(Math.round(Math.random() * 4)) {
         case 0:
-            formulaRes = Number(num[0]) + Number(num[1]) + Number(num[2]) + Number(num[3]) + Number(num[4]);
-            hintLabel = `the formula <b>n1 + n2 + n3 + n4 + n5</b> results in <b>${formulaRes}</b>`;
+            formulaRes = Number(num[0]) * Number(num[1]) + Number(num[2]) + Number(num[3]) * Number(num[4]);
+            hintLabel = `the formula <b>n1 * n2 + n3 + n4 * n5</b> results in <b>${formulaRes}</b>`;
             hintFunc = (n) => {
                 let nstr = String(n);
-                return (Number(nstr[0]) + Number(nstr[1]) + Number(nstr[2]) + Number(nstr[3]) + Number(nstr[4])) == formulaRes;
+                return (Number(nstr[0]) * Number(nstr[1]) + Number(nstr[2]) + Number(nstr[3]) * Number(nstr[4])) == formulaRes;
             };
             break;
         case 1:
-            formulaRes = Number(num[0]) + Number(num[1]) - Number(num[2]) + Number(num[3]) - Number(num[4]);
-            hintLabel = `the formula <b>n1 + n2 - n3 + n4 - n5</b> results in <b>${formulaRes}</b>`;
+            formulaRes = Number(num[0]) * Number(num[1]) - Number(num[2]) + Number(num[3]) - Number(num[4]);
+            hintLabel = `the formula <b>n1 * n2 - n3 + n4 - n5</b> results in <b>${formulaRes}</b>`;
             hintFunc = (n) => {
                 let nstr = String(n);
-                return (Number(nstr[0]) + Number(nstr[1]) - Number(nstr[2]) + Number(nstr[3]) - Number(nstr[4])) == formulaRes;
+                return (Number(nstr[0]) * Number(nstr[1]) - Number(nstr[2]) + Number(nstr[3]) - Number(nstr[4])) == formulaRes;
             };
             break;
         case 2:
-            formulaRes = Number(num[0]) - Number(num[1]) + Number(num[2]) - Number(num[3]) + Number(num[4]);
-            hintLabel = `the formula <b>n1 - n2 + n3 - n4 + n5</b> results in <b>${formulaRes}</b>`;
+            formulaRes = Number(num[0]) - Number(num[1]) * Number(num[2]) - Number(num[3]) + Number(num[4]);
+            hintLabel = `the formula <b>n1 - n2 * n3 - n4 + n5</b> results in <b>${formulaRes}</b>`;
             hintFunc = (n) => {
                 let nstr = String(n);
-                return (Number(nstr[0]) - Number(nstr[1]) + Number(nstr[2]) - Number(nstr[3]) + Number(nstr[4])) == formulaRes;
+                return (Number(nstr[0]) - Number(nstr[1]) * Number(nstr[2]) - Number(nstr[3]) + Number(nstr[4])) == formulaRes;
             };
             break;
         case 3:
