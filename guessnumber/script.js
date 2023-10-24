@@ -417,10 +417,19 @@ function bindNumberValidator() {
 }
 
 function checkGuess() {
-    let guess = [...document.getElementById("input-numbers").children].reduce((acc, n) => acc + (String(n.value) || '-'), '');
-
+    let guessInputs = [...document.getElementById("input-numbers").children];
+    let guess = guessInputs.reduce((acc, n) => acc + (String(n.value) || '-'), '');
+    
+    for(let gi in guessInputs) {
+        if(String(guessInputs[gi].value) == String(_number)[gi]) {
+            guessInputs[gi].classList.add("correct");
+        }
+        else {
+            guessInputs[gi].classList.remove("correct");
+        }
+    }
+    
     const hintsElements = [...document.getElementById("hints").getElementsByTagName('li')];
-
     let hintCounter = 0;
     for(let h in _hints) {
         try {
@@ -443,6 +452,7 @@ function checkGuess() {
     if(hintCounter == _hints.length) {
         document.getElementById("input-numbers").classList.add("correct");
         document.getElementById("guess-btn").setAttribute("disabled", true);
+        guessInputs.forEach(gi => gi.setAttribute("readonly", true));
     }
 }
 
