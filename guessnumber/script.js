@@ -101,7 +101,7 @@ function getPositionHint(num, ignorePos=[]) {
 
     let rPos = 0;
     do {
-        rPos = Math.round(Math.random() * 4);
+        rPos = Math.round(Math.random() * 3);
     } while(ignorePos.includes(rPos));
 
     let eomRes = getEvenOddMultipleHint(Number(String(num)[rPos]));
